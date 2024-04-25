@@ -104,13 +104,12 @@ class ActiveRecordEntity {
 
      */
     // public static function
-    static async findAll() {
+    static async findAll(isFullSchema = false) {
         console.log('find all')
         const query = "SELECT * FROM `" + this.getTableName() + "` LIMIT 100;";
         console.log(query)
         const [rows] = await conn.query(query);
-        console.log(rows)
-        const classInstances = rows.map(row => new this(row));
+        const classInstances = rows.map(row => new this(row, isFullSchema));
         return classInstances;
     }
 

@@ -5,12 +5,13 @@ const { Company } = require('../../models/Companys/Company');
 async function getCompanys(req, res) {
     console.log('get companys')
     const query = req.query;
+    const isFullSchema = query.isFullSchema || false;
     if(query.name) {
         const Company = await getCompanyByName(req, res)
         return Company
     }
 
-    const data = await Company.findAll();
+    const data = await Company.findAll(isFullSchema);
     return data;
 }
 

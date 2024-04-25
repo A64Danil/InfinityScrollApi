@@ -29,21 +29,24 @@ class Company extends ActiveRecordEntity {
 
     country_code
 
-    constructor(body, isFull = false) {
+    constructor(body, isFullSchema = false) {
         super();
         if (!body) return this;
 
         this.id = body.id;
-        this.handle = body.handle;
         this.name = body.name;
         this.website = body.website;
         this.industry = body.industry;
-        this.size = body.size;
-        this.type = body.type;
-        this.founded = body.founded;
-        this.city = body.city;
-        this.state = body.state;
-        this.country_code = body.country_code;
+        if (isFullSchema) {
+            this.handle = body.handle;
+            this.size = body.size;
+            this.type = body.type;
+            this.founded = body.founded;
+            this.city = body.city;
+            this.state = body.state;
+            this.country_code = body.country_code;
+        }
+
     }
 
     /**
