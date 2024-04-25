@@ -29,18 +29,21 @@ class Company extends ActiveRecordEntity {
 
     country_code
 
-    constructor(body) {
+    constructor(body, isFull = false) {
         super();
         if (!body) return this;
-        console.log('company constructor')
-        // console.log(body)
-        // TODO: продумать конструктор юзера
+
         this.id = body.id;
+        this.handle = body.handle;
         this.name = body.name;
-        this.email = body.email;
-        this.role = "user";
-        this.passwordHash = "sha256:" + body.password;
-        // this.passwordHash = body.passwordHash;
+        this.website = body.website;
+        this.industry = body.industry;
+        this.size = body.size;
+        this.type = body.type;
+        this.founded = body.founded;
+        this.city = body.city;
+        this.state = body.state;
+        this.country_code = body.country_code;
     }
 
     /**
