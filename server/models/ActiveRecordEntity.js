@@ -22,23 +22,6 @@ class ActiveRecordEntity {
         return this.id;
     }
 
-    __set(name, value) {
-        const camelCaseName = this[this.underscoreToCamelCase(name)];
-        this[camelCaseName] = value;
-    }
-
-    // Privat
-    underscoreToCamelCase(source){
-        const res = source.split('_').filter(s => s.length).map(ucFirst);
-        res[0] = lcFirst(res[0]);
-        return res.join('')
-    }
-
-    // private
-    camelCaseToUnderscore(source) {
-        return source.replace( /([A-Z])/g, "_$1").toLowerCase();
-    }
-
 
     async save() {
         if (this.id) {
