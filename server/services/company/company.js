@@ -16,16 +16,18 @@ async function getCompanys(req, res) {
     const page = query.page;
     const limit = query.limit;
 
-    if(page) {
-        console.log('you are in IF-page statement')
-        const data = await Company.findAll(isFullSchema);
-        return data;
-    }
+    // TODO: переделать на Company.getInRange
+    // if(page) {
+    //     console.log('you are in IF-page statement')
+    //     const data = await Company.getByPage(page, limit, isFullSchema);
+    //     return data;
+    // }
 
     const start = parseInt(query.start);
     const end = parseInt(query.end);
     if(start >= 0) {
         console.log('you are in IF-start statement')
+        // TODO: доделать проверки чтобы выдача была не более 500
         const data = await Company.getInRange(start, end, isFullSchema);
         return data;
     }
