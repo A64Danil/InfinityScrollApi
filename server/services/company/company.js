@@ -12,21 +12,19 @@ async function getCompanys(req, res) {
 
     const isFullSchema = query.isFullSchema || false;
 
-    // ?page=1&limit=10
-    const page = query.page;
-    const limit = query.limit;
+    const page = parseInt(query.page);
+    const limit = query.limit < 500 ? parseInt(query.limit) : 500;
 
-    // TODO: переделать на Company.getInRange
-    // if(page) {
-    //     console.log('you are in IF-page statement')
-    //     const data = await Company.getByPage(page, limit, isFullSchema);
-    //     return data;
-    // }
+    if(page) {
+        const start = ((page - 1) * limit) + 1;
+        const end = start + (limit - 1);
+        const data = await Company.getInRange(start, end, isFullSchema);
+        return data;
+    }
 
     const start = parseInt(query.start);
     let end = parseInt(query.end);
     if(start >= 0) {
-        console.log('you are in IF-start statement')
         if(end - start > 500) {
             end = start + 499;
         }
