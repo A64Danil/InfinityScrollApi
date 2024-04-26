@@ -24,10 +24,12 @@ async function getCompanys(req, res) {
     // }
 
     const start = parseInt(query.start);
-    const end = parseInt(query.end);
+    let end = parseInt(query.end);
     if(start >= 0) {
         console.log('you are in IF-start statement')
-        // TODO: доделать проверки чтобы выдача была не более 500
+        if(end - start > 500) {
+            end = start + 499;
+        }
         const data = await Company.getInRange(start, end, isFullSchema);
         return data;
     }
