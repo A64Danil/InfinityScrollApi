@@ -22,11 +22,11 @@ async function getCompanys(req, res) {
         return data;
     }
 
-    const start = query.start;
-    const end = query.end;
+    const start = parseInt(query.start);
+    const end = parseInt(query.end);
     if(start >= 0) {
         console.log('you are in IF-start statement')
-        const data = await Company.findAll(isFullSchema);
+        const data = await Company.getInRange(start, end, isFullSchema);
         return data;
     }
 

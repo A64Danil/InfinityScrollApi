@@ -113,6 +113,22 @@ class ActiveRecordEntity {
         return classInstances;
     }
 
+    static async getByPage(page = 1, limit = 100, isFullSchema = false) {
+        console.log('getByPage')
+        const query = "SELECT * FROM `" + this.getTableName() + "` LIMIT 100;";
+        console.log(query)
+        const [rows] = await conn.query(query);
+        const classInstances = rows.map(row => new this(row, isFullSchema));
+        return classInstances;
+    }
+
+    static async getInRange(start = 1, end = (start + 10), isFullSchema = false) {
+        const query = "SELECT * FROM `" + this.getTableName() + "` WHERE id BETWEEN ? AND ? LIMIT 100;";
+        const [rows] = await conn.query(query, [start, end]);
+        const classInstances = rows.map(row => new this(row, isFullSchema));
+        return classInstances;
+    }
+
     // TODO: are we need fineAllByColumn?
     //public static function
     static async findOneByColumn(columnName, value) {
