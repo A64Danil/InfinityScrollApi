@@ -1,7 +1,7 @@
 'use strict';
 
 function index(request, response) {
-    response.json('This is home route');
+    response.sendFile('index.html', { root: './public/' });
 }
 
 module.exports = {
