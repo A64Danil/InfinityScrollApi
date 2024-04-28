@@ -14,6 +14,19 @@ function init(server) {
         res.redirect('/home');
     });
 
+    server.post('*', function (req, res) {
+        res.status(405)
+    });
+
+    server.delete('*', function (req, res) {
+        res.status(405)
+    });
+
+    server.put('*', function (req, res) {
+        res.status(405)
+    });
+
+
     server.use('/api', apiRoute);
     server.use('/home', homeRoute);
     // server.use('/error', errorRoute);
