@@ -2,7 +2,6 @@
 
 const apiRoute = require('./apis');
 const homeRoute = require('./home');
-// const errorRoute = require('./error');
 
 function init(server) {
     server.get('*', function (req, res, next) {
@@ -10,9 +9,9 @@ function init(server) {
         return next();
     });
 
-    server.get('/', function (req, res) {
-        res.redirect('/home');
-    });
+    // server.get('/', function (req, res) {
+    //     res.redirect('/home');
+    // });
 
     server.post('*', function (req, res) {
         res.status(405)
@@ -28,7 +27,7 @@ function init(server) {
 
 
     server.use('/api', apiRoute);
-    server.use('/home', homeRoute);
+    server.use('/', homeRoute);
     // server.use('/error', errorRoute);
 }
 
