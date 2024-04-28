@@ -19,7 +19,10 @@ module.exports = function() {
         server.set('env', config.env);
         server.set('port', config.port);
         server.set('hostname', config.hostname);
+        // TODO: узнать как это использовать
         server.set('viewDir', config.viewDir);
+        server.set('views', server.get('viewDir'));
+
 
         // Returns middleware that parses json
         server.use(cors());
@@ -29,9 +32,6 @@ module.exports = function() {
         server.use(cookieParser());
         server.use(logger('dev'));
 
-        server.use('/uploads', express.static('uploads'));
-
-        server.set('views', server.get('viewDir'));
 
         // Set up routes
         routes.init(server);
