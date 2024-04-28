@@ -27,7 +27,8 @@ function init(server) {
 
 
     server.use('/api', apiRoute);
-    server.use('/', homeRoute);
+    // TODO: кажется это не нужно
+    // server.use('/', homeRoute);
     // server.use('/error', errorRoute);
 }
 
