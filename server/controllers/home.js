@@ -1,9 +1,14 @@
 'use strict';
 
-function index(request, response) {
-    response.sendFile('index.html', { root: './public/' });
+function index(req, res) {
+    res.sendFile('index.html', { root: './public/views' });
+}
+
+function contacts(req, res) {
+    res.sendFile('contacts.html', { root: './public/views' });
 }
 
 module.exports = {
-    index: index
+    index,
+    contacts
 };

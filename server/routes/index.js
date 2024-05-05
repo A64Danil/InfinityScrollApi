@@ -9,10 +9,6 @@ function init(server) {
         return next();
     });
 
-    // server.get('/', function (req, res) {
-    //     res.redirect('/home');
-    // });
-
     server.post('*', function (req, res) {
         res.status(405)
     });
@@ -27,8 +23,7 @@ function init(server) {
 
 
     server.use('/api', apiRoute);
-    // TODO: кажется это не нужно
-    // server.use('/', homeRoute);
+    server.use('/', homeRoute);
     // server.use('/error', errorRoute);
 }
 

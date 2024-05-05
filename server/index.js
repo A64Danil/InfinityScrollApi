@@ -19,10 +19,7 @@ module.exports = function() {
         server.set('env', config.env);
         server.set('port', config.port);
         server.set('hostname', config.hostname);
-        // TODO: узнать как это заменить на то что ниже
-        server.use(express.static('public'));
-        // server.set('viewDir', config.viewDir);
-        // server.set('public', server.get('public'));
+        server.use(express.static('public/assets'));
 
 
         // Returns middleware that parses json
