@@ -13,6 +13,33 @@
     <p>This is a free API to test your frontned. Data was founded on https://www.kaggle.com/.</p>
 
 
+    <section>
+        <h2>Routes:</h2>
+
+        <p>You can use basic route to get all compannies, like this:</p>
+        <pre class="code">/api/v1/companys</pre>
+
+
+    </section>
+
+    <section>
+        <h2>Pagination:</h2>
+
+        <div>
+            <p>You can use pagination with query params "page" and "limit", like this:</p>
+            <pre class="code">/api/v1/companys?page=9000&limit=2000</pre>
+
+            <p><strong>Attention:</strong> maximum limit can be 500, but default limit is 100</p>
+        </div>
+
+        <div>
+            <p>Also you can use pagination with query params "start" and "end", like this:</p>
+            <pre class="code">/api/v1/companys?start=9000&end=9500</pre>
+
+            <p><strong>Attention:</strong> maximum range can be 500, but default range is 100</p>
+        </div>
+    </section>
+
 <!--    <script type="module" src="src/js/frontendTest.js"></script>-->
 </body>
 </html>

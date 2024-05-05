@@ -23,7 +23,7 @@ async function getCompanys(req, res) {
     }
 
     const start = parseInt(query.start);
-    let end = parseInt(query.end);
+    let end = parseInt(query.end) || start + 99;
     if(start >= 0) {
         if(end - start > 500) {
             end = start + 499;

@@ -4,3 +4,20 @@ body {
     background-color: aliceblue;
     max-width: 1024px;
 }
+
+section {
+    margin-bottom: 60px;
+}
+
+section > div {
+    margin-bottom: 30px;
+}
+
+.code {
+    display: block;
+    white-space: pre;
+    /*padding: 0 1em 1em 1em;*/
+    padding: 1em;
+    color: #fff;
+    background: #000;
+}
