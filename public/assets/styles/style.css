@@ -1,8 +1,14 @@
+:root {
+    --mb: 40px;
+}
+
 body {
     width: 75%;
     margin: 0 auto;
     background-color: aliceblue;
     max-width: 1024px;
+    font-family: monospace;
+    font-size: 20px;
 }
 
 section {
@@ -13,6 +19,22 @@ section > div {
     margin-bottom: 30px;
 }
 
+p {
+    margin: 0;
+}
+
+pre {
+    margin: 0;
+}
+
+.mainLogo {
+    margin-bottom: var(--mb);
+}
+
+.codeDescription {
+    margin-bottom: 10px;
+}
+
 .code {
     display: block;
     white-space: pre;
@@ -20,4 +42,14 @@ section > div {
     padding: 1em;
     color: #fff;
     background: #000;
+    margin-bottom: var(--mb);
+}
+
+
+.attention {
+    margin-top: calc((var(--mb) - 4px) * -1);
+}
+
+.code + .attention {
+    margin-bottom: var(--mb);
 }

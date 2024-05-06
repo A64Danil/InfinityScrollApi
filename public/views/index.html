@@ -8,16 +8,27 @@
 <body>
     <h1>Infinity Scroll Rest Api</h1>
 
-    <img src="../images/torin.gif" alt="">
+    <div class="mainLogo">
+        <img src="../images/logo.svg" alt="">
+    </div>
 
-    <p>This is a free API to test your frontned. Data was founded on https://www.kaggle.com/.</p>
+    <p class="codeDescription">This is a free API to test your frontned. Data was founded on https://www.kaggle.com/.</p>
 
+
+    <section>
+        <h2>How to use it:</h2>
+
+        <p class="codeDescription">Just send GET-request to main route. For examaple, like fetch:</p>
+        <pre class="code">fetch('http://localhost:3000/api/v1/companys')</pre>
+
+
+    </section>
 
     <section>
         <h2>Routes:</h2>
 
-        <p>You can use basic route to get all compannies, like this:</p>
-        <pre class="code">/api/v1/companys</pre>
+        <p class="codeDescription">You can use basic route to get all compannies, like this:</p>
+        <pre class="code">http://localhost:3000/api/v1/companys</pre>
 
 
     </section>
@@ -26,17 +37,17 @@
         <h2>Pagination:</h2>
 
         <div>
-            <p>You can use pagination with query params "page" and "limit", like this:</p>
-            <pre class="code">/api/v1/companys?page=9000&limit=2000</pre>
+            <p class="codeDescription">You can use pagination with query params "page" and "limit", like this:</p>
+            <pre class="code">http://localhost:3000/api/v1/companys?page=9000&limit=2000</pre>
 
-            <p><strong>Attention:</strong> maximum limit can be 500, but default limit is 100</p>
+            <p class="attention"><strong>Attention:</strong> maximum limit can be 500, but default limit is 100</p>
         </div>
 
         <div>
-            <p>Also you can use pagination with query params "start" and "end", like this:</p>
-            <pre class="code">/api/v1/companys?start=9000&end=9500</pre>
+            <p class="codeDescription">Also you can use pagination with query params "start" and "end", like this:</p>
+            <pre class="code">http://localhost:3000/api/v1/companys?start=9000&end=9500</pre>
 
-            <p><strong>Attention:</strong> maximum range can be 500, but default range is 100</p>
+            <p class="attention"><strong>Attention:</strong> maximum range can be 500, but default range is 100</p>
         </div>
     </section>
 
@@ -44,9 +55,9 @@
     <section>
         <h2>Get by id:</h2>
 
-        <p>You can get company by ID: </p>
+        <p class="codeDescription">You can get company by ID: </p>
         <pre class="code">http://localhost:3000/api/v1/companys/:id</pre>
-        <p>Example: </p>
+        <p class="codeDescription">Example: </p>
         <pre class="code">http://localhost:3000/api/v1/companys/137</pre>
 
 
@@ -54,8 +65,8 @@
 
     <section>
         <h2>Another params:</h2>
-        <p>You can get all info about companies by using param "isFullSchema"</p>
-        <pre class="code">api/v1/companys?start=9001&end=9500&isFullSchema=true</pre>
+        <p class="codeDescription">You can get all info about companies by using param "isFullSchema"</p>
+        <pre class="code">http://localhost:3000/api/v1/companys?start=9001&end=9500&isFullSchema=true</pre>
     </section>
 
     <!--    <script type="module" src="src/js/frontendTest.js"></script>-->
