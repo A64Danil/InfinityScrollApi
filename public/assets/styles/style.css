@@ -43,6 +43,7 @@ pre {
     color: #fff;
     background: #000;
     margin-bottom: var(--mb);
+    overflow-x: scroll;
 }
 
 
