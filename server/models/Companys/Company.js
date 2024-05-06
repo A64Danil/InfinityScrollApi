@@ -37,7 +37,7 @@ class Company extends ActiveRecordEntity {
         this.name = body.name;
         this.website = body.website;
         this.industry = body.industry;
-        if (isFullSchema) {
+        if (isFullSchema === true) {
             this.handle = body.handle;
             this.size = body.size;
             this.type = body.type;

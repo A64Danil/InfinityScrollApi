@@ -10,7 +10,7 @@ async function getCompanys(req, res) {
         return Company
     }
 
-    const isFullSchema = query.isFullSchema || false;
+    const isFullSchema = query.isFullSchema === "true";
 
     const page = parseInt(query.page);
     const limit = query.limit < 500 ? parseInt(query.limit) : 500;
