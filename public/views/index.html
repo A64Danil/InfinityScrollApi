@@ -12,14 +12,23 @@
         <img src="../images/logo.svg" alt="">
     </div>
 
-    <p class="codeDescription">This is a free API to test your frontned. Data was founded on https://www.kaggle.com/.</p>
+
+
+
+    <section>
+        <h2>What is it?</h2>
+
+        <p class="codeDescription">This is a free API to test your frontned. Data was founded on https://www.kaggle.com/. Data is information about real companies, working in USA (actual for 2023 year). Data-base was build to test huge batch of data. Number of records in this base - more than 17 000 000</p>
+    </section>
 
 
     <section>
         <h2>How to use it:</h2>
 
         <p class="codeDescription">Just send GET-request to main route. For examaple, like fetch:</p>
-        <pre class="code">fetch('http://localhost:3000/api/v1/companys')</pre>
+        <pre class="code">fetch('https://restapi.qoobeo.ru/api/v1/companys')
+    .then(response => response.json())
+    .then(json => console.log(json))</pre>
 
 
     </section>
@@ -28,7 +37,7 @@
         <h2>Routes:</h2>
 
         <p class="codeDescription">You can use basic route to get all compannies, like this:</p>
-        <pre class="code">http://localhost:3000/api/v1/companys</pre>
+        <pre class="code">https://restapi.qoobeo.ru/api/v1/companys</pre>
 
 
     </section>
@@ -38,14 +47,14 @@
 
         <div>
             <p class="codeDescription">You can use pagination with query params "page" and "limit", like this:</p>
-            <pre class="code">http://localhost:3000/api/v1/companys?page=9000&limit=2000</pre>
+            <pre class="code">https://restapi.qoobeo.ru/api/v1/companys?page=9000&limit=2000</pre>
 
             <p class="attention"><strong>Attention:</strong> maximum limit can be 500, but default limit is 100</p>
         </div>
 
         <div>
             <p class="codeDescription">Also you can use pagination with query params "start" and "end", like this:</p>
-            <pre class="code">http://localhost:3000/api/v1/companys?start=9000&end=9500</pre>
+            <pre class="code">https://restapi.qoobeo.ru/api/v1/companys?start=9000&end=9500</pre>
 
             <p class="attention"><strong>Attention:</strong> maximum range can be 500, but default range is 100</p>
         </div>
@@ -56,9 +65,9 @@
         <h2>Get by id:</h2>
 
         <p class="codeDescription">You can get company by ID: </p>
-        <pre class="code">http://localhost:3000/api/v1/companys/:id</pre>
+        <pre class="code">https://restapi.qoobeo.ru/api/v1/companys/:id</pre>
         <p class="codeDescription">Example: </p>
-        <pre class="code">http://localhost:3000/api/v1/companys/137</pre>
+        <pre class="code">https://restapi.qoobeo.ru/api/v1/companys/137</pre>
 
 
     </section>
@@ -66,7 +75,7 @@
     <section>
         <h2>Another params:</h2>
         <p class="codeDescription">You can get all info about companies by using param "isFullSchema"</p>
-        <pre class="code">http://localhost:3000/api/v1/companys?start=9001&end=9500&isFullSchema=true</pre>
+        <pre class="code">https://restapi.qoobeo.ru/api/v1/companys?start=9001&end=9500&isFullSchema=true</pre>
     </section>
 
     <!--    <script type="module" src="src/js/frontendTest.js"></script>-->
