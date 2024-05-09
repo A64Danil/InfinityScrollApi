@@ -10,6 +10,9 @@ async function getCompanys(req, res) {
         return Company
     }
 
+    const totalCount = 17154017;
+    res.set('X-Total-Count', totalCount);
+
     const isFullSchema = query.isFullSchema === "true";
 
     const page = parseInt(query.page);
@@ -31,7 +34,6 @@ async function getCompanys(req, res) {
         const data = await Company.getInRange(start, end, isFullSchema);
         return data;
     }
-
 
     const data = await Company.findAll(isFullSchema);
     return data;
