@@ -22,8 +22,12 @@ module.exports = function() {
         server.use(express.static('public/assets'));
 
 
+        const corsOptions = {
+            methods: ['GET'],
+        };
+
         // Returns middleware that parses json
-        server.use(cors());
+        server.use(cors(corsOptions));
         server.use(errorHandler);
         server.use(bodyParser.json());
         server.use(bodyParser.urlencoded({ extended: false }));
